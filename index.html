@@ -17,110 +17,142 @@
 <body>
 
 <div class="container">
-  <div class="row" id="input-humans">
-    <div class="col-xs-1"><!--
-    --><label for="gammadrone">Гаммадрон</label><!--
-    --><input class="form-control" type="number" value="0" id="gammadrone"><!--
-  --></div><!--
-  --><div class="col-xs-1"><!--
-    --><label for="wasp">Оса</label><!--
-    --><input class="form-control" type="number" value="0" id="wasp"><!--
-  --></div><!--
-  --><div class="col-xs-1"><!--
-    --><label for="mirage">Мираж</label><!--
-    --><input class="form-control" type="number" value="0" id="mirage"><!--
-  --></div><!--
-  --><div class="col-xs-1"><!--
-    --><label for="frigate">Фрегат</label><!--
-    --><input class="form-control" type="number" value="0" id="frigate"><!--
-  --></div><!--
-  --><div class="col-xs-1"><!--
-    --><label for="truckc">Трак С</label><!--
-    --><input class="form-control" type="number" value="0" id="truckc"><!--
-  --></div><!--
-  --><div class="col-xs-1"><!--
-    --><label for="cruiser">Крейсер</label><!--
-    --><input class="form-control" type="number" value="0" id="cruiser"><!--
-  --></div><!--
-  --><div class="col-xs-1"><!--
-    --><label for="battleship">Линкор</label><!--
-    --><input class="form-control" type="number" value="0" id="battleship"><!--
-  --></div><!--
-  --><div class="col-xs-1"><!--
-    --><label for="carrier">Авианосец</label><!--
-    --><input class="form-control" type="number" value="0" id="carrier"><!--
-  --></div><!--
-  --><div class="col-xs-1"><!--
-    --><label for="dreadnought">Дредноут</label><!--
-    --><input class="form-control" type="number" value="0" id="dreadnought"><!--
-  --></div><!--
-  --><div class="col-xs-1"><!--
-    --><label for="railgun">Рейлган</label><!--
-    --><input class="form-control" type="number" value="0" id="railgun"><!--
-  --></div><!--
-  --><div class="col-xs-1"><!--
-    --><label for="reaper">Пожинатель</label><!--
-    --><input class="form-control" type="number" value="0" id="reaper"><!--
-  --></div><!--
-  --><div class="col-xs-1"><!--
-    --><label for="flagship">Флагман</label><!--
-    --><input class="form-control" type="number" value="0" id="flagship"><!--
-  --></div>
-  </div>
-  <div class="form-group row" id="input-reptiles"><!--
-  --><div class="col-xs-1"><!--
-    --><label for="sphero">Сферо</label><!--
-    --><input class="form-control" type="number" value="0" id="sphero"><!--
-  --></div><!--
-  --><div class="col-xs-1"><!--
-    --><label for="blade">Клинок</label><!--
-    --><input class="form-control" type="number" value="0" id="blade"><!--
-  --></div><!--
-  --><div class="col-xs-1"><!--
-    --><label for="lacertian">Ящер</label><!--
-    --><input class="form-control" type="number" value="0" id="lacertian"><!--
-  --></div><!--
-  --><div class="col-xs-1"><!--
-    --><label for="wyvern">Виверна</label><!--
-    --><input class="form-control" type="number" value="0" id="wyvern"><!--
-  --></div><!--
-  --><div class="col-xs-1"><!--
-    --><label for="trioniks">Трионикс</label><!--
-    --><input class="form-control" type="number" value="0" id="trioniks"><!--
-  --></div><!--
-  --><div class="col-xs-1"><!--
-    --><label for="dragon">Дракон</label><!--
-    --><input class="form-control" type="number" value="0" id="dragon"><!--
-  --></div><!--
-  --><div class="col-xs-1"><!--
-    --><label for="hydra">Гидра</label><!--
-    --><input class="form-control" type="number" value="0" id="hydra"><!--
-  --></div><!--
-  --><div class="col-xs-1"><!--
-    --><label for="armadillo">Броненосец</label><!--
-    --><input class="form-control" type="number" value="0" id="armadillo"><!--
-  --></div><!--
-  --><div class="col-xs-1"><!--
-    --><label for="prism">Призма</label><!--
-    --><input class="form-control" type="number" value="0" id="prism"><!--
-  --></div><!--
-  --><div class="col-xs-1"><!--
-    --><label for="octopus">Спрут</label><!--
-    --><input class="form-control" type="number" value="0" id="octopus"><!--
-  --></div><!--
-  --><div class="col-xs-1"><!--
-    --><label for="godzilla">Годзилла</label><!--
-    --><input class="form-control" type="number" value="0" id="godzilla"><!--
-  --></div><!--
-  --><div class="col-xs-1"><!--
-    --><label for="shadow">Тень</label><!--
-    --><input class="form-control" type="number" value="0" id="shadow"><!--
-  --></div>
-  </div>
+  <div class="row">
+    <div class="col-xs-12 col-md-2">
+      <h3>Consul JS Calc</h3><hr />
+      <label for="reptiles-fleet" class="small">Тип флота:</label>
+      <select id="reptiles-fleet">
+        <option value="battle">Боевой флот</option>
+        <option value="defence">Ряды обороны</option>
+        <option value="patrol">Патруль</option>
+        <option value="trade">Караван</option>
+      </select>
+      <label for="reptiles-level" class="small">Уровень:</label>
+      <select id="reptiles-level">
+        <option value="1">1</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+        <option value="4">4</option>
+        <option value="5">5</option>
+        <option value="6">6</option>
+        <option value="7">7</option>
+      </select>
+    </div>
 
-  <div class="form-group row">
-    <div class="col-md-4 col-md-offset-4">
-      <input type="button" id="run_calc" value="Рассчитать"/>
+    <div class="col-xs-12 col-md-10 container">
+      <h3>Люди:</h3>
+      <div id="input-humans" class="form-group row">
+        <div class="col-xs-2"><!--
+        --><label class="small" for="gammadrone">Гаммадрон</label><!--
+        --><input class="form-control" type="number" value="0" id="gammadrone"><!--
+      --></div><!--
+      --><div class="col-xs-2"><!--
+        --><label class="small" for="wasp">Оса</label><!--
+        --><input class="form-control" type="number" value="0" id="wasp"><!--
+      --></div><!--
+      --><div class="col-xs-2"><!--
+        --><label class="small" for="mirage">Мираж</label><!--
+        --><input class="form-control" type="number" value="0" id="mirage"><!--
+      --></div><!--
+      --><div class="col-xs-2"><!--
+        --><label class="small" for="frigate">Фрегат</label><!--
+        --><input class="form-control" type="number" value="0" id="frigate"><!--
+      --></div><!--
+      --><div class="col-xs-2"><!--
+        --><label class="small" for="truckc">Трак С</label><!--
+        --><input class="form-control" type="number" value="0" id="truckc"><!--
+      --></div><!--
+      --><div class="col-xs-2"><!--
+        --><label class="small" for="cruiser">Крейсер</label><!--
+        --><input class="form-control" type="number" value="0" id="cruiser"><!--
+      --></div><!--
+      --><div class="col-xs-2"><!--
+        --><label class="small" for="battleship">Линкор</label><!--
+        --><input class="form-control" type="number" value="0" id="battleship"><!--
+      --></div><!--
+      --><div class="col-xs-2"><!--
+        --><label class="small" for="carrier">Авианосец</label><!--
+        --><input class="form-control" type="number" value="0" id="carrier"><!--
+      --></div><!--
+      --><div class="col-xs-2"><!--
+        --><label class="small" for="dreadnought">Дредноут</label><!--
+        --><input class="form-control" type="number" value="0" id="dreadnought"><!--
+      --></div><!--
+      --><div class="col-xs-2"><!--
+        --><label class="small" for="railgun">Рейлган</label><!--
+        --><input class="form-control" type="number" value="0" id="railgun"><!--
+      --></div><!--
+      --><div class="col-xs-2"><!--
+        --><label class="small" for="reaper">Пожинатель</label><!--
+        --><input class="form-control" type="number" value="0" id="reaper"><!--
+      --></div><!--
+      --><div class="col-xs-2"><!--
+        --><label class="small" for="flagship">Флагман</label><!--
+        --><input class="form-control" type="number" value="0" id="flagship"><!--
+      --></div>
+      </div>
+      <h3>Рептилии:</h3>
+      <div id="input-reptiles" class="form-group row"><!--
+      --><div class="col-xs-2"><!--
+        --><label class="small" for="sphero">Сферо</label><!--
+        --><input class="form-control" type="number" value="0" id="sphero"><!--
+      --></div><!--
+      --><div class="col-xs-2"><!--
+        --><label class="small" for="blade">Клинок</label><!--
+        --><input class="form-control" type="number" value="0" id="blade"><!--
+      --></div><!--
+      --><div class="col-xs-2"><!--
+        --><label class="small" for="lacertian">Ящер</label><!--
+        --><input class="form-control" type="number" value="0" id="lacertian"><!--
+      --></div><!--
+      --><div class="col-xs-2"><!--
+        --><label class="small" for="wyvern">Виверна</label><!--
+        --><input class="form-control" type="number" value="0" id="wyvern"><!--
+      --></div><!--
+      --><div class="col-xs-2"><!--
+        --><label class="small" for="trioniks">Трионикс</label><!--
+        --><input class="form-control" type="number" value="0" id="trioniks"><!--
+      --></div><!--
+      --><div class="col-xs-2"><!--
+        --><label class="small" for="dragon">Дракон</label><!--
+        --><input class="form-control" type="number" value="0" id="dragon"><!--
+      --></div><!--
+      --><div class="col-xs-2"><!--
+        --><label class="small" for="hydra">Гидра</label><!--
+        --><input class="form-control" type="number" value="0" id="hydra"><!--
+      --></div><!--
+      --><div class="col-xs-2"><!--
+        --><label class="small" for="armadillo">Броненосец</label><!--
+        --><input class="form-control" type="number" value="0" id="armadillo"><!--
+      --></div><!--
+      --><div class="col-xs-2"><!--
+        --><label class="small" for="prism">Призма</label><!--
+        --><input class="form-control" type="number" value="0" id="prism"><!--
+      --></div><!--
+      --><div class="col-xs-2"><!--
+        --><label class="small" for="octopus">Спрут</label><!--
+        --><input class="form-control" type="number" value="0" id="octopus"><!--
+      --></div><!--
+      --><div class="col-xs-2"><!--
+        --><label class="small" for="godzilla">Годзилла</label><!--
+        --><input class="form-control" type="number" value="0" id="godzilla"><!--
+      --></div><!--
+      --><div class="col-xs-2"><!--
+        --><label class="small" for="shadow">Тень</label><!--
+        --><input class="form-control" type="number" value="0" id="shadow"><!--
+      --></div>
+      </div>
+
+      <div class="form-group row">
+        <div class="col-md-4 col-md-offset-4">
+          <input type="button" id="run_calc" value="Рассчитать"/>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div id="results" class="col-xs-12">
+
     </div>
   </div>
 </div>
