@@ -12,13 +12,22 @@
   <script src="lib/data.js"></script>
   <script src="lib/core.js"></script>
   <script src="lib/main.js"></script>
+  <style type="text/css">
+    .alert > button.pull-right {
+      position: relative;
+      top: -6px;
+    }
+    #results .alert {
+      cursor: pointer;
+    }
+  </style>
 </head>
 
 <body>
 
-<div class="container">
+<div class="container-fluid">
   <div class="row">
-    <div class="col-xs-12 col-md-2">
+    <div class="col-xs-12 col-sm-3 col-lg-2">
       <h3>Consul JS Calc</h3><hr />
       <label for="reptiles-fleet" class="small">Тип флота:</label>
       <select id="reptiles-fleet">
@@ -39,107 +48,107 @@
       </select>
     </div>
 
-    <div class="col-xs-12 col-md-10 container">
+    <div class="col-xs-12 col-sm-9 col-lg-10 container">
       <h3>Люди:</h3>
       <div id="input-humans" class="form-group row">
-        <div class="col-xs-2"><!--
+        <div class="col-xs-4 col-sm-2 col-lg-1 ship-input"><!--
         --><label class="small" for="gammadrone">Гаммадрон</label><!--
-        --><input class="form-control" type="number" value="0" id="gammadrone"><!--
+        --><input class="form-control" type="number" value="0" id="gammadrone" name="gammadrone"><!--
       --></div><!--
-      --><div class="col-xs-2"><!--
+      --><div class="col-xs-4 col-sm-2 col-lg-1 ship-input"><!--
         --><label class="small" for="wasp">Оса</label><!--
-        --><input class="form-control" type="number" value="0" id="wasp"><!--
+        --><input class="form-control" type="number" value="0" id="wasp" name="wasp"><!--
       --></div><!--
-      --><div class="col-xs-2"><!--
+      --><div class="col-xs-4 col-sm-2 col-lg-1 ship-input"><!--
         --><label class="small" for="mirage">Мираж</label><!--
-        --><input class="form-control" type="number" value="0" id="mirage"><!--
+        --><input class="form-control" type="number" value="0" id="mirage" name="mirage"><!--
       --></div><!--
-      --><div class="col-xs-2"><!--
+      --><div class="col-xs-4 col-sm-2 col-lg-1 ship-input"><!--
         --><label class="small" for="frigate">Фрегат</label><!--
-        --><input class="form-control" type="number" value="0" id="frigate"><!--
+        --><input class="form-control" type="number" value="0" id="frigate" name="frigate"><!--
       --></div><!--
-      --><div class="col-xs-2"><!--
+      --><div class="col-xs-4 col-sm-2 col-lg-1 ship-input"><!--
         --><label class="small" for="truckc">Трак С</label><!--
-        --><input class="form-control" type="number" value="0" id="truckc"><!--
+        --><input class="form-control" type="number" value="0" id="truckc" name="truckc"><!--
       --></div><!--
-      --><div class="col-xs-2"><!--
+      --><div class="col-xs-4 col-sm-2 col-lg-1 ship-input"><!--
         --><label class="small" for="cruiser">Крейсер</label><!--
-        --><input class="form-control" type="number" value="0" id="cruiser"><!--
+        --><input class="form-control" type="number" value="0" id="cruiser" name="cruiser"><!--
       --></div><!--
-      --><div class="col-xs-2"><!--
+      --><div class="col-xs-4 col-sm-2 col-lg-1 ship-input"><!--
         --><label class="small" for="battleship">Линкор</label><!--
-        --><input class="form-control" type="number" value="0" id="battleship"><!--
+        --><input class="form-control" type="number" value="0" id="battleship" name="battleship"><!--
       --></div><!--
-      --><div class="col-xs-2"><!--
+      --><div class="col-xs-4 col-sm-2 col-lg-1 ship-input"><!--
         --><label class="small" for="carrier">Авианосец</label><!--
-        --><input class="form-control" type="number" value="0" id="carrier"><!--
+        --><input class="form-control" type="number" value="0" id="carrier" name="carrier"><!--
       --></div><!--
-      --><div class="col-xs-2"><!--
+      --><div class="col-xs-4 col-sm-2 col-lg-1 ship-input"><!--
         --><label class="small" for="dreadnought">Дредноут</label><!--
-        --><input class="form-control" type="number" value="0" id="dreadnought"><!--
+        --><input class="form-control" type="number" value="0" id="dreadnought" name="dreadnought"><!--
       --></div><!--
-      --><div class="col-xs-2"><!--
+      --><div class="col-xs-4 col-sm-2 col-lg-1 ship-input"><!--
         --><label class="small" for="railgun">Рейлган</label><!--
-        --><input class="form-control" type="number" value="0" id="railgun"><!--
+        --><input class="form-control" type="number" value="0" id="railgun" name="railgun"><!--
       --></div><!--
-      --><div class="col-xs-2"><!--
+      --><div class="col-xs-4 col-sm-2 col-lg-1 ship-input"><!--
         --><label class="small" for="reaper">Пожинатель</label><!--
-        --><input class="form-control" type="number" value="0" id="reaper"><!--
+        --><input class="form-control" type="number" value="0" id="reaper" name="reaper"><!--
       --></div><!--
-      --><div class="col-xs-2"><!--
+      --><div class="col-xs-4 col-sm-2 col-lg-1 ship-input"><!--
         --><label class="small" for="flagship">Флагман</label><!--
-        --><input class="form-control" type="number" value="0" id="flagship"><!--
+        --><input class="form-control" type="number" value="0" id="flagship" name="flagship"><!--
       --></div>
       </div>
       <h3>Рептилии:</h3>
       <div id="input-reptiles" class="form-group row"><!--
-      --><div class="col-xs-2"><!--
+      --><div class="col-xs-4 col-sm-2 col-lg-1 ship-input"><!--
         --><label class="small" for="sphero">Сферо</label><!--
-        --><input class="form-control" type="number" value="0" id="sphero"><!--
+        --><input class="form-control" type="number" value="0" id="sphero" name="sphero"><!--
       --></div><!--
-      --><div class="col-xs-2"><!--
+      --><div class="col-xs-4 col-sm-2 col-lg-1 ship-input"><!--
         --><label class="small" for="blade">Клинок</label><!--
-        --><input class="form-control" type="number" value="0" id="blade"><!--
+        --><input class="form-control" type="number" value="0" id="blade" name="blade"><!--
       --></div><!--
-      --><div class="col-xs-2"><!--
+      --><div class="col-xs-4 col-sm-2 col-lg-1 ship-input"><!--
         --><label class="small" for="lacertian">Ящер</label><!--
-        --><input class="form-control" type="number" value="0" id="lacertian"><!--
+        --><input class="form-control" type="number" value="0" id="lacertian" name="lacertian"><!--
       --></div><!--
-      --><div class="col-xs-2"><!--
+      --><div class="col-xs-4 col-sm-2 col-lg-1 ship-input"><!--
         --><label class="small" for="wyvern">Виверна</label><!--
-        --><input class="form-control" type="number" value="0" id="wyvern"><!--
+        --><input class="form-control" type="number" value="0" id="wyvern" name="wyvern"><!--
       --></div><!--
-      --><div class="col-xs-2"><!--
+      --><div class="col-xs-4 col-sm-2 col-lg-1 ship-input"><!--
         --><label class="small" for="trioniks">Трионикс</label><!--
-        --><input class="form-control" type="number" value="0" id="trioniks"><!--
+        --><input class="form-control" type="number" value="0" id="trioniks" name="trioniks"><!--
       --></div><!--
-      --><div class="col-xs-2"><!--
+      --><div class="col-xs-4 col-sm-2 col-lg-1 ship-input"><!--
         --><label class="small" for="dragon">Дракон</label><!--
-        --><input class="form-control" type="number" value="0" id="dragon"><!--
+        --><input class="form-control" type="number" value="0" id="dragon" name="dragon"><!--
       --></div><!--
-      --><div class="col-xs-2"><!--
+      --><div class="col-xs-4 col-sm-2 col-lg-1 ship-input"><!--
         --><label class="small" for="hydra">Гидра</label><!--
-        --><input class="form-control" type="number" value="0" id="hydra"><!--
+        --><input class="form-control" type="number" value="0" id="hydra" name="hydra"><!--
       --></div><!--
-      --><div class="col-xs-2"><!--
+      --><div class="col-xs-4 col-sm-2 col-lg-1 ship-input"><!--
         --><label class="small" for="armadillo">Броненосец</label><!--
-        --><input class="form-control" type="number" value="0" id="armadillo"><!--
+        --><input class="form-control" type="number" value="0" id="armadillo" name="armadillo"><!--
       --></div><!--
-      --><div class="col-xs-2"><!--
+      --><div class="col-xs-4 col-sm-2 col-lg-1 ship-input"><!--
         --><label class="small" for="prism">Призма</label><!--
-        --><input class="form-control" type="number" value="0" id="prism"><!--
+        --><input class="form-control" type="number" value="0" id="prism" name="prism"><!--
       --></div><!--
-      --><div class="col-xs-2"><!--
+      --><div class="col-xs-4 col-sm-2 col-lg-1 ship-input"><!--
         --><label class="small" for="octopus">Спрут</label><!--
-        --><input class="form-control" type="number" value="0" id="octopus"><!--
+        --><input class="form-control" type="number" value="0" id="octopus" name="octopus"><!--
       --></div><!--
-      --><div class="col-xs-2"><!--
+      --><div class="col-xs-4 col-sm-2 col-lg-1 ship-input"><!--
         --><label class="small" for="godzilla">Годзилла</label><!--
-        --><input class="form-control" type="number" value="0" id="godzilla"><!--
+        --><input class="form-control" type="number" value="0" id="godzilla" name="godzilla"><!--
       --></div><!--
-      --><div class="col-xs-2"><!--
+      --><div class="col-xs-4 col-sm-2 col-lg-1 ship-input"><!--
         --><label class="small" for="shadow">Тень</label><!--
-        --><input class="form-control" type="number" value="0" id="shadow"><!--
+        --><input class="form-control" type="number" value="0" id="shadow" name="shadow"><!--
       --></div>
       </div>
 
