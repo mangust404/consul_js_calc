@@ -20,6 +20,18 @@
     #results .alert {
       cursor: pointer;
     }
+
+    .ship-input {
+      padding-right: 0;
+    }
+
+    #results .alert button .glyphicon::before {
+      content: "\2212";
+    }
+
+    #results .alert button.collapsed .glyphicon::before {
+      content: "\002b";
+    }
   </style>
 </head>
 
@@ -29,15 +41,15 @@
   <div class="row">
     <div class="col-xs-12 col-sm-3 col-lg-2">
       <h3>Consul JS Calc</h3><hr />
-      <label for="reptiles-fleet" class="small">Тип флота:</label>
-      <select id="reptiles-fleet">
+      <label for="reptiles-fleet" class="small">Тип флота:</label><br />
+      <select id="reptiles-fleet" style="width: 90px;">
+        <option value="">-</option>
         <option value="battle">Боевой флот</option>
         <option value="defence">Ряды обороны</option>
         <option value="patrol">Патруль</option>
         <option value="trade">Караван</option>
-      </select>
-      <label for="reptiles-level" class="small">Уровень:</label>
-      <select id="reptiles-level">
+      </select><select id="reptiles-level">
+        <option value="">-</option>
         <option value="1">1</option>
         <option value="2">2</option>
         <option value="3">3</option>
@@ -45,7 +57,155 @@
         <option value="5">5</option>
         <option value="6">6</option>
         <option value="7">7</option>
-      </select>
+      </select><br />
+      <button class="btn btn-primary" data-toggle="modal" data-target="#augmentations-modal">Улучшения</button>
+      <div class="modal fade" id="augmentations-modal" tabindex="-1" role="dialog">
+        <div class="modal-dialog modal-lg" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+              <h4 class="modal-title">Редактирование улучшений</h4>
+            </div>
+            <div class="modal-body">
+              <form id="augmentations-form" class="row">
+                <div class="col-xs-12">
+                  <div class="panel panel-default">
+                    <div class="panel-heading">Ачивки</div>
+                    <div class="panel-body">
+                      <div class="form-group col-xs-6 col-sm-2">
+                        <input type="checkbox" name="crazyDonateBonus" id="edit-crazyDonateBonus">
+                        <label for="edit-crazyDonateBonus"><img title="Совет ебанулся" alt="Совет ебанулся" src="https://consulwar.ru/img/game/Resource/Base/Credit/icon.svg" width="40" /></lable>
+                      </div>
+                      <div class="form-group col-xs-6 col-sm-2">
+                        <input type="checkbox" name="satanMinister" id="edit-satanMinister">
+                        <label for="edit-satanMinister"><img title="Служитель сатаны" alt="Служитель сатаны" src="https://consulwar.ru/img/game/statistics/achievements/general/satanminister.png" width="40" /></lable>
+                      </div>
+                      <div class="form-group col-xs-6 col-sm-2">
+                        <input type="checkbox" name="pirateRaid" id="edit-pirateRaid">
+                        <label for="edit-pirateRaid"><img title="Пиратский рейд" alt="Пиратский рейд" src="https://consulwar.ru/img/game/statistics/achievements/cosmos/pirateraid.png" width="40" /></lable>
+                      </div>
+                      <div class="form-group col-xs-6 col-sm-2">
+                        <input type="checkbox" name="braveCaptain" id="edit-braveCaptain">
+                        <label for="edit-braveCaptain"><img title="Смелый капитан" alt="Смелый капитан" width="40" src="https://consulwar.ru/img/game/statistics/achievements/cosmos/bravecaptain.png" /></lable>
+                      </div>
+                      <div class="form-group col-xs-6 col-sm-2">
+                        <input type="checkbox" name="headlessAdmiral" id="edit-headlessAdmiral">
+                        <label for="edit-headlessAdmiral"><img title="Безбашенный адмирал" alt="Безбашенный адмирал" width="40" src="https://consulwar.ru/img/game/statistics/achievements/cosmos/madadmiral.png" /></lable>
+                      </div>
+                      <div class="form-group col-xs-6 col-sm-2">
+                        <input type="checkbox" name="lepreconKiller" id="edit-lepreconKiller">
+                        <label for="edit-lepreconKiller"><img title="Убийца репликонов" alt="Убийца репликонов" width="40" src="https://consulwar.ru/img/game/statistics/achievements/cosmos/leprechaunkiller.png" /></lable>
+                      </div>
+                      <div class="form-group col-xs-6 col-sm-2">
+                        <input type="checkbox" name="coldbloodedCalmly" id="edit-coldbloodedCalmly">
+                        <label for="edit-coldbloodedCalmly"><img title="Хладнокровных хладнокровно" alt="Хладнокровных хладнокровно" width="40" src="https://consulwar.ru/img/game/statistics/achievements/cosmos/coldblooded.png" /></lable>
+                      </div>
+                      <div class="form-group col-xs-6 col-sm-2">
+                        <input type="checkbox" name="lightBringer" id="edit-lightBringer">
+                        <label for="edit-lightBringer"><img title="Несущий свет" alt="Несущий свет" width="40" src="https://consulwar.ru/img/game/statistics/achievements/cosmos/carryinglight.png" /></lable>
+                      </div>
+                      <div class="form-group col-xs-6 col-sm-2">
+                        <input type="checkbox" name="levTolstoy" id="edit-levTolstoy">
+                        <label for="edit-levTolstoy"><img title="Лев толстой" alt="Лев толстой" width="40" src="https://consulwar.ru/img/game/statistics/achievements/general/tolstoy.png" /></lable>
+                      </div>
+                    </div>
+                  </div>
+
+
+                  <div class="panel panel-default">
+                    <div class="panel-heading">Уровни</div>
+                    <div class="panel-body">
+                      <div class="form-group col-xs-3">
+                        <label for="edit-energyLvl">Энергетика</label>
+                        <input class="form-control" type="number" name="energyLvl" id="edit-energyLvl" />
+                      </div>
+
+                      <div class="form-group col-xs-3">
+                        <label for="edit-doomDayCalibrationLvl">Калибровка СД</label>
+                        <input class="form-control" type="number" name="doomDayCalibrationLvl" id="edit-doomDayCalibrationLvl" />
+                      </div>
+
+                      <div class="form-group col-xs-3">
+                        <label for="edit-bonusItemsAttack">Бонусы палаты на урон</label>
+                        <input class="form-control" type="number" name="bonusItemsAttack" id="edit-bonusItemsAttack" />
+                      </div>
+
+                      <div class="form-group col-xs-3">
+                        <label for="edit-bonusItemsHP">Бонусы палаты на броню</label>
+                        <input class="form-control" type="number" name="bonusItemsHP" id="edit-bonusItemsHP" />
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="panel panel-default">
+                    <div class="panel-heading">Улучшения флота</div>
+                    <div class="panel-body">
+                      <div class="row">
+                        <div class="col-xs-4 col-sm-2 ship-input"><!--
+                        --><label class="small" for="edit-gammadrone">Дрон</label><!--
+                        --><input class="form-control" type="number" value="0" id="edit-gammadrone" name="upgrades[gammadrone]"><!--
+                      --></div><!--
+                      --><div class="col-xs-4 col-sm-2 ship-input"><!--
+                        --><label class="small" for="edit-wasp">Оса</label><!--
+                        --><input class="form-control" type="number" value="0" id="edit-wasp" name="upgrades[wasp]"><!--
+                      --></div><!--
+                      --><div class="col-xs-4 col-sm-2 ship-input"><!--
+                        --><label class="small" for="edit-mirage">Мираж</label><!--
+                        --><input class="form-control" type="number" value="0" id="edit-mirage" name="upgrades[mirage]"><!--
+                      --></div><!--
+                      --><div class="col-xs-4 col-sm-2 ship-input"><!--
+                        --><label class="small" for="edit-frigate">Фрегат</label><!--
+                        --><input class="form-control" type="number" value="0" id="edit-frigate" name="upgrades[frigate]"><!--
+                      --></div><!--
+                      --><div class="col-xs-4 col-sm-2 ship-input"><!--
+                        --><label class="small" for="edit-truckc">Трак С</label><!--
+                        --><input class="form-control" type="number" value="0" id="edit-truckc" name="upgrades[truckc]"><!--
+                      --></div><!--
+                      --><div class="col-xs-4 col-sm-2 ship-input"><!--
+                        --><label class="small" for="edit-cruiser">Крейсер</label><!--
+                        --><input class="form-control" type="number" value="0" id="edit-cruiser" name="upgrades[cruiser]"><!--
+                      --></div><!--
+                      --><div class="col-xs-4 col-sm-2 ship-input"><!--
+                        --><label class="small" for="edit-battleship">Линкор</label><!--
+                        --><input class="form-control" type="number" value="0" id="edit-battleship" name="upgrades[battleship]"><!--
+                      --></div><!--
+                      --><div class="col-xs-4 col-sm-2 ship-input"><!--
+                        --><label class="small" for="edit-carrier">Авианосец</label><!--
+                        --><input class="form-control" type="number" value="0" id="edit-carrier" name="upgrades[carrier]"><!--
+                      --></div><!--
+                      --><div class="col-xs-4 col-sm-2 ship-input"><!--
+                        --><label class="small" for="edit-dreadnought">Дредноут</label><!--
+                        --><input class="form-control" type="number" value="0" id="edit-dreadnought" name="upgrades[dreadnought]"><!--
+                      --></div><!--
+                      --><div class="col-xs-4 col-sm-2 ship-input"><!--
+                        --><label class="small" for="edit-railgun">Рейлган</label><!--
+                        --><input class="form-control" type="number" value="0" id="edit-railgun" name="upgrades[railgun]"><!--
+                      --></div><!--
+                      --><div class="col-xs-4 col-sm-2 ship-input"><!--
+                        --><label class="small" for="edit-reaper">Пожинатель</label><!--
+                        --><input class="form-control" type="number" value="0" id="edit-reaper" name="upgrades[reaper]"><!--
+                      --></div><!--
+                      --><div class="col-xs-4 col-sm-2 ship-input"><!--
+                        --><label class="small" for="edit-flagship">Флагман</label><!--
+                        --><input class="form-control" type="number" value="0" id="edit-flagship" name="upgrades[flagship]"><!--
+                      --></div>
+                      </div><!-- /.row -->
+                    </div><!-- /.panel-body -->
+                  </div><!-- /.panel -->
+
+                </div><!-- /.col-xs-12 -->
+              </form>
+            </div>
+            <div class="modal-footer">
+              <button id="save-augmentations" type="button" class="btn btn-primary">Сохранить изменения</button>
+            </div>
+          </div><!-- /.modal-content -->
+        </div><!-- /.modal-dialog -->
+      </div><!-- /.modal -->
+
+      <h4>Недавние:</h4>
+      <div id="recent">
+      </div>
     </div>
 
     <div class="col-xs-12 col-sm-9 col-lg-10 container">
